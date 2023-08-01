@@ -1,0 +1,225 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/124/395/themes/common/logo-1775124472-1583886474-8d992d475f8d5bcc511d328d006d298e1583886474-480-0.png?0">
+    <title>Quanto vale a sua hora?</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+		body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: white;
+            color: black;
+            padding-top: 2rem;
+        }
+        .container {
+            max-width: 960px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        #vida-atual {
+            background-color: #FFD966;
+            color: black;
+        }
+        #vida-almejada {
+            background-color: #7030A0;
+            color: white;
+        }
+        #valor-produto {
+            background-color: #2F75B5;
+            color: white;
+        }
+        .card {
+            margin: 1rem;
+        }
+		.btn-primary {
+            background-color: #FFD966 !important;  /* Cor do botão */
+            color: black !important;  /* Cor da fonte */
+			font-weight: bold;
+        }
+		input[type=range] {
+			/* Remover a cor padrão do Firefox */
+			color: transparent;
+		}
+
+		input[type=range]::-webkit-slider-runnable-track {
+			background: linear-gradient(to right, #FFD966 0%, #FFD966 var(--x), white var(--x), white 100%);
+		}
+
+		input[type=range]::-moz-range-track {
+			background: linear-gradient(to right, #FFD966 0%, #FFD966 var(--x), white var(--x), white 100%);
+		}
+
+		input[type=range]::-moz-range-progress {
+			background: #FFD966;
+		}
+
+		input[type=range]::-webkit-slider-thumb {
+			/* Necessário para poder utilizar variáveis CSS no thumb */
+			box-shadow: 0 0 0 #000;
+		}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">  <!-- adicionado a classe text-center -->
+            <img src="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/124/395/themes/common/logo-1775124472-1583886474-8d992d475f8d5bcc511d328d006d298e1583886474-480-0.png?0" alt="Logo" style="height:100px;">
+        </div>
+		<br>
+        <h1> Quanto vale a sua hora?</h1>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="card" id="vida-atual">
+                    <div class="card-body">
+                        <h2 class="card-title">Vida atual</h2>
+                        <form>
+                        <div class="form-group">
+                            <label>Quanto você ganha por mês?</label>
+                            <input type="text" id="salario-atual" class="form-control" placeholder="R$0,00">
+                        </div>
+                        <div class="form-group">
+                            <label>Horas trabalhadas por dia:</label>
+                            <input type="text" id="horas-dia-atual" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Dias trabalhados por semana:</label>
+                            <input type="text" id="dias-semana-atual" class="form-control">
+                        </div>
+                        <h3>Sua hora vale R$ <span id="valor-hora-atual">0,00</span></h3>
+                    </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="card" id="vida-almejada">
+                    <div class="card-body">
+                        <h2 class="card-title">Vida que deseja</h2>
+                        <form>
+                        <div class="form-group">
+                            <label>Quanto você quer ganhar?</label>
+                            <input type="text" id="salario-almejado" class="form-control" placeholder="R$0,00">
+                        </div>
+                        <div class="form-group">
+                            <label>Horas trabalhadas por dia:</label>
+                            <input type="text" id="horas-dia-almejado" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Dias trabalhados por semana:</label>
+                            <input type="text" id="dias-semana-almejado" class="form-control">
+                        </div>
+                        <h3>Sua hora vai valer R$ <span id="valor-hora-almejado">0,00</span></h3>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+	<br>
+    <div class="row">
+        <div class="col">
+            <div class="card" id="valor-produto">
+                <div class="card-body">
+                    <h2 class="card-title">Como calcular o valor dos seus produtos:</h3>
+                    <form>
+                        <div class="form-group">
+                            <label><strong>Custo do material:</strong></label>
+                            <input type="text" id="custo-material" class="form-control" placeholder="R$0,00">
+                        </div>
+                        <div class="form-group">
+                            <label><strong>Tempo de produção:</strong></label>
+                            <input type="range" id="tempo-producao" class="form-control-range" min="0" max="240" value="30">
+                            <p id="tempo-producao-display">30 minutos</p>
+                        </div>
+						<div class="form-group">
+                                <label><strong>Tipo de venda:</strong></label>
+                                <div id="taxa-marketplace">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="marketplaceTax" id="marketplace" value="0.18">
+                                        <label class="form-check-label" for="shopee">
+                                            Marketplace
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="marketplaceTax" id="directSale" value="0">
+                                        <label class="form-check-label" for="directSale">
+                                            Venda Direta
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+						<br>
+                        <button type="button" id="calcular" class="btn btn-primary">Calcular</button>
+                        <br>
+						<br>
+						<h3>Preço mínimo de venda: R$<span id="valor-produto-final">0,00</span></h3>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+	<br>
+	<br>
+    <div class="row">
+        <div class="col text-center">
+			<h2>Quer alcançar a vida que deseja? Conheça o curso Cola que é Sucesso.</h2>
+            <a href="http://www.colaqueesucesso.com.br" class="btn btn-lg" style="background-color: #7030A0; color: white;">Saiba mais.</a>
+        </div>
+    </div>
+	<br>
+	<br>
+	<br>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function calcularValorHora(salario, horasPorDia, diasPorSemana) {
+            return (salario / (horasPorDia * (diasPorSemana * 4))).toFixed(2);
+        }
+        function calcularValorProduto(valorHora, tempoProducao, custoMaterial, taxaMarketplace) {
+            return ((valorHora * tempoProducao / 60) + parseFloat(custoMaterial)) * (1 + parseFloat(taxaMarketplace)) * 1.03;
+        }
+        function atualizarValorHora() {
+            const salarioAtual = $('#salario-atual').val().replace(",", ".");
+            const horasDiaAtual = $('#horas-dia-atual').val();
+            const diasSemanaAtual = $('#dias-semana-atual').val();
+            const valorHoraAtual = calcularValorHora(salarioAtual, horasDiaAtual, diasSemanaAtual);
+            $('#valor-hora-atual').text(valorHoraAtual.replace(".", ","));
+            const salarioAlmejado = $('#salario-almejado').val().replace(",", ".");
+            const horasDiaAlmejado = $('#horas-dia-almejado').val();
+            const diasSemanaAlmejado = $('#dias-semana-almejado').val();
+            const valorHoraAlmejado = calcularValorHora(salarioAlmejado, horasDiaAlmejado, diasSemanaAlmejado);
+            $('#valor-hora-almejado').text(valorHoraAlmejado.replace(".", ","));
+        }
+        function atualizarTempoProducao() {
+            const tempoProducao = $('#tempo-producao').val();
+            if (tempoProducao <= 60) {
+                $('#tempo-producao-display').text(tempoProducao + ' minutos');
+            } else {
+                $('#tempo-producao-display').text((tempoProducao / 60).toFixed(2).replace(".", ",") + ' horas');
+            }
+        }
+        function atualizarValorProduto() {
+			const valorHoraAlmejado = $('#valor-hora-almejado').text().replace(",", ".");
+			const tempoProducao = $('#tempo-producao').val();
+			const custoMaterial = $('#custo-material').val().replace(",", ".");
+			const taxaMarketplace = $("input[name='marketplaceTax']:checked").val();
+			const valorProdutoFinal = calcularValorProduto(valorHoraAlmejado, tempoProducao, custoMaterial, taxaMarketplace);
+			$('#valor-produto-final').text(valorProdutoFinal.toFixed(2).replace(".", ","));
+		}
+
+        $('#salario-atual, #horas-dia-atual, #dias-semana-atual, #salario-almejado, #horas-dia-almejado, #dias-semana-almejado').on('input', atualizarValorHora);
+        $('#tempo-producao').on('input', atualizarTempoProducao);
+        $('#calcular').click(atualizarValorProduto);
+		
+		$('#tempo-producao').on('input', function() {
+		atualizarTempoProducao();
+		var x = $(this).val();
+		var colorStop = x / $(this).attr('max');
+		$(this).css('--x', colorStop * 100 + '%');
+		}).trigger('input');
+
+    </script>
+</body>
+</html>
