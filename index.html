@@ -6,7 +6,7 @@
     <title>Quanto vale a sua hora?</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <style>
-		body {
+        body {
             font-family: 'Montserrat', sans-serif;
             background-color: white;
             color: black;
@@ -28,11 +28,15 @@
             color: white;
         }
         #valor-produto {
-            background-color: #2F75B5;
+            background-color: #A2A2A2; /* Cor atualizada */
             color: white;
         }
         .card {
             margin: 1rem;
+            display: none; /* Escondendo os cards inicialmente */
+        }
+        .card.active {
+            display: block; /* Exibindo o card ativo */
         }
 		.btn-primary {
             background-color: #FFD966 !important;  /* Cor do botão */
@@ -69,6 +73,9 @@
         </div>
 		<br>
         <h1> Quanto vale a sua hora?</h1>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="card" id="vida-atual">
@@ -158,6 +165,10 @@
             </div>
         </div>
     </div>
+    <div class="text-center">
+        <button id="voltar" class="btn btn-secondary" disabled>Voltar</button>
+        <button id="prosseguir" class="btn btn-primary">Prosseguir</button>
+    </div>
 	<br>
 	<br>
     <div class="row">
@@ -177,6 +188,10 @@
         }
         function calcularValorProduto(valorHora, tempoProducao, custoMaterial, taxaMarketplace) {
             return ((valorHora * tempoProducao / 60) + parseFloat(custoMaterial)) * (1 + parseFloat(taxaMarketplace)) * 1.03;
+        }
+        function mostrarCard(id) {
+            $(".card").hide();
+            $("#" + id).show();
         }
         function atualizarValorHora() {
             const salarioAtual = $('#salario-atual').val().replace(",", ".");
@@ -207,6 +222,16 @@
 			$('#valor-produto-final').text(valorProdutoFinal.toFixed(2).replace(".", ","));
 		}
 
+        $('#calcular-vida-atual').click(function() {
+            atualizarValorHora();
+            mostrarCard("vida-almejada");
+        });
+
+        $('#calcular-vida-almejada').click(function() {
+            atualizarValorHora();
+            mostrarCard("valor-produto");
+        });
+
         $('#salario-atual, #horas-dia-atual, #dias-semana-atual, #salario-almejado, #horas-dia-almejado, #dias-semana-almejado').on('input', atualizarValorHora);
         $('#tempo-producao').on('input', atualizarTempoProducao);
         $('#calcular').click(atualizarValorProduto);
@@ -217,6 +242,22 @@
 		var colorStop = x / $(this).attr('max');
 		$(this).css('--x', colorStop * 100 + '%');
 		}).trigger('input');
+
+        $('#prosseguir').click(function() {
+            // Função para prosseguir para o próximo card ou ação
+        });
+
+        $('#calcular').click(atualizarValorProduto);
+
+        $('#tempo-producao').on('input', function() {
+            atualizarTempoProducao();
+            var x = $(this).val();
+            var colorStop = x / $(this).attr('max');
+            $(this).css('--x', colorStop * 100 + '%');
+        }).trigger('input');
+
+        // Iniciar mostrando o primeiro card
+        mostrarCard("vida-atual");
 
     </script>
 </body>
