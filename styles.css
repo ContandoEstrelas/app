@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'Studly';
+    src: url('assets/Studly Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+h1, h2, h3 {
+    font-family: 'Studly', sans-serif;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    color: black;
+}
+.container {
+    max-width: 960px;
+}
+.container img {
+    display: block;
+    margin: 0 auto; /* centraliza a imagem */
+}
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+h2.card-title, h2.hora-vale, h2.preco-minimo, h2.card-title.quanto-cobrar {
+    background-color: #BF932E;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+h2.card-title.vida-desejada, h2.card-title.valor-desejada-hora {
+    background-color: #8C52FF;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+p {
+    color: #000;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 18px;
+}
+/* ... resto do seu código ... */
+.btn-primary, .btn-secondary {
+    font-weight: bold;
+    padding: 10px 20px !important;
+    color: #ffffff !important;
+}
+.btn-primary {
+    background-color: #BF932E !important;
+    border-color: #BF932E;
+}
+.btn-secondary {
+    background-color: #8C52FF !important;
+}
+
+.banner {
+    width: 100%;
+    border-color: #ffffff;
+
+}
+.navbar {
+    background-color: #BF932E;
+    justify-content: space-between;
+}
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path stroke="rgba(255, 255, 255, 1)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/></svg>') !important;
+}
+.navbar-brand {
+    justify-content: flex-end; /* Centralização horizontal */
+    align-items: center; /* Centralização vertical */
+}
+.navbar-brand, .navbar-nav .nav-link {
+    color: white;
+}
+#salario-atual, #horas-dia-atual, #dias-semana-atual, #salario-almejado, #horas-dia-almejado, #dias-semana-almejado, #valor-hora-almejada-editavel, #custo-material, #mtkplace {
+    background-color: #eaeaea;
+    color: #000;
+    font-weight: bold;
+}
+#vida-atual {
+    background-color: #ffffff;
+    color: #BF932E;
+}
+#vida-almejada {
+    background-color: #fbfbfb;
+    color: #BF932E;
+}
+#valor-produto {
+    background-color: #ffffff;
+    color: #BF932E;
+}
+#valor-hora-atual {
+    background-color: #eaeaea; /* Cinza Claro */
+    color: black;
+    font-weight: bold;
+}
+#valor-hora-almejado {
+    background-color: #eaeaea; /* Cinza Claro */
+    color: black;
+    font-weight: bold;
+}
+
+#valor-produto-final {
+    background-color: #eaeaea; /* Cinza Claro */
+    color: black;
+}
+
+.card {
+    margin: 1rem;
+    border: #ffffff;
+    display: none;
+}
+.card.active {
+    display: block;
+}
+.btn-primary {
+    background-color: #BF932E !important;
+    color: #ffffff !important;
+    font-weight: bold;
+    border-color: #BF932E;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.btn-secondary {
+    background-color: #8C52FF !important;
+    color: #ffffff !important;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn-back {
+    position: relative;
+    background: url('img/back.png') no-repeat;
+    background-size: contain;
+    border: none;
+    width: 40px; 
+    height: 40px;
+}
+.btn-home {
+    position: relative;
+    background: url('img/home.png') no-repeat;
+    background-size: contain;
+    border: none;
+    width: 40px; 
+    height: 40px;
+}
+.btn-back:hover, .btn-home:hover {
+    background-color: transparent !important; /* Remover fundo cinza */
+}
+
+.menu {
+    background-color: #BF932E;
+    padding: 10px 0;
+}
+.menu a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+.menu a:hover {
+    text-decoration: underline;
+}
+.valor-hora-card {
+    background-color: white;
+    border: 2px solid #BF932E;
+    color: #BF932E;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: #BF932E; /* Define a cor da barra do range */
+  }
+  
+  input[type=range]::-webkit-slider-runnable-track,
+  input[type=range]::-moz-range-track {
+    background: #BF932E; /* Cor de fundo da trilha */
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #BF932E; /* Cor de fundo do círculo */
+    border: 5px solid white; /* Borda branca do círculo */
+    border-radius: 50%;
+  }
+  
+  input[type=range]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #BF932E; /* Cor de fundo do círculo */
+    border: 2px solid white; /* Borda branca do círculo */
+    border-radius: 50%;
+  }
+  
+  /* Estilo para Firefox - Cor da progressão */
+  input[type=range]::-moz-range-progress {
+    background: #BF932E;
+  }
+  
