@@ -139,7 +139,12 @@ p {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-
+.btn-back-home {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100vh; /* Ajusta a altura para ocupar toda a tela */
+}
 .btn-back {
     position: relative;
     background: url('img/back.png') no-repeat;
