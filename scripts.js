@@ -78,7 +78,7 @@ currentCardIndex = Math.max(0, currentCardIndex - 1);
 mostrarCard(cards[currentCardIndex]);
 }
 
-$('#prosseguir, #prosseguir-calculo').click(function() {
+$('#prosseguir, #acancar, #prosseguir-calculo').click(function() {
 nextCard();
 });
 
