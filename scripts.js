@@ -107,6 +107,6 @@ mostrarCard('vida-atual');
 
 $('#home-btn').click(function() {
     currentCardIndex = 0;
-    mostrarCard(cards[currentCardIndex]);
+    mostrarCard('vida-atual'); // Assume que 'vida-atual' é o primeiro card
 });
 });
