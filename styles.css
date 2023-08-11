@@ -1,12 +1,5 @@
-@font-face {
-    font-family: 'Studly';
-    src: url('assets/Studly Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-
 h1, h2, h3 {
-    font-family: 'Studly', sans-serif;
+    font-family: 'Montserrar', sans-serif;
 }
 
 body {
