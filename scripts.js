@@ -6,18 +6,32 @@ function calcularValorProduto(valorHora, tempoProducao, custoMaterial, taxaMarke
     return ((valorHora * tempoProducao / 60) + parseFloat(custoMaterial)) * (1 + parseFloat(taxaMarketplace)) * 1.03;
 }
 
-function atualizarValorHora() {
-    const salarioAtual = $('#salario-atual').val().replace(",", ".");
-    const horasDiaAtual = $('#horas-dia-atual').val();
-    const diasSemanaAtual = $('#dias-semana-atual').val();
-    const valorHoraAtual = calcularValorHora(salarioAtual, horasDiaAtual, diasSemanaAtual);
-    $('#valor-hora-atual').text(valorHoraAtual.replace(".", ","));
 
-    const salarioAlmejado = $('#salario-almejado').val().replace(",", ".");
-    const horasDiaAlmejado = $('#horas-dia-almejado').val();
-    const diasSemanaAlmejado = $('#dias-semana-almejado').val();
-    const valorHoraAlmejado = calcularValorHora(salarioAlmejado, horasDiaAlmejado, diasSemanaAlmejado);
-    $('#valor-hora-almejado').text(valorHoraAlmejado.replace(".", ","));
+function calcularValorHora(salario, horasPorDia, diasPorSemana) {
+    if (isNaN(salario) || isNaN(horasPorDia) || isNaN(diasPorSemana) || 
+        horasPorDia <= 0 || diasPorSemana <= 0) {
+        return "0,00";
+    }
+    return (salario / (horasPorDia * (diasPorSemana * 4))).toFixed(2);
+}
+
+
+
+function atualizarValorHora() {
+    // Obtém os valores dos elementos de entrada, substituindo vírgulas por pontos
+    const salarioAtual = parseFloat($('#salario-atual').val().replace(",", "."));
+    const horasDiaAtual = parseFloat($('#horas-dia-atual').val());
+    const diasSemanaAtual = parseFloat($('#dias-semana-atual').val());
+    // Calcula o valor da hora atual usando a função calcularValorHora
+    const valorHoraAtual = calcularValorHora(salarioAtual, horasDiaAtual, diasSemanaAtual).toString().replace(".", ",");
+    $('#valor-hora-atual').text(valorHoraAtual);
+
+    // Repete o processo para os valores almejados
+    const salarioAlmejado = parseFloat($('#salario-almejado').val().replace(",", "."));
+    const horasDiaAlmejado = parseFloat($('#horas-dia-almejado').val());
+    const diasSemanaAlmejado = parseFloat($('#dias-semana-almejado').val());
+    const valorHoraAlmejado = calcularValorHora(salarioAlmejado, horasDiaAlmejado, diasSemanaAlmejado).toString().replace(".", ",");
+    $('#valor-hora-almejado').text(valorHoraAlmejado);
 }
 
 function atualizarTempoProducao() {
@@ -27,13 +41,17 @@ function atualizarTempoProducao() {
 }
 
 function atualizarValorProduto() {
-    const valorHoraAlmejado = $('#valor-hora-almejada-editavel').val().replace(",", ".");
-    const tempoProducao = $('#tempo-producao').val();
-    const custoMaterial = $('#custo-material').val().replace(",", ".");
-    const taxaMarketplace = $("input[name='marketplaceTax']:checked").val();
+    // Obtém os valores dos elementos de entrada, substituindo vírgulas por pontos
+    const valorHoraAlmejado = parseFloat($('#valor-hora-almejada-editavel').val().replace(",", "."));
+    const tempoProducao = parseFloat($('#tempo-producao').val());
+    const custoMaterial = parseFloat($('#custo-material').val().replace(",", "."));
+    const taxaMarketplace = parseFloat($("input[name='marketplaceTax']:checked").val());
+    // Calcula o valor final do produto usando a função calcularValorProduto
     const valorProdutoFinal = calcularValorProduto(valorHoraAlmejado, tempoProducao, custoMaterial, taxaMarketplace);
     $('#valor-produto-final').text(valorProdutoFinal.toFixed(2).replace(".", ","));
 }
+
+
 $(document).ready(function() {
 let currentCardIndex = 0;
 
