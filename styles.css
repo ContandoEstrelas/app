@@ -77,6 +77,26 @@ p {
 .navbar-brand, .navbar-nav .nav-link {
     color: white;
 }
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #7030A0;
+    color: white;
+}
+.social-buttons img {
+    width: 40px;
+    margin-left: 20px;
+    filter: brightness(0) invert(1); /* Inverte as cores dos ícones */
+}
+.navigation-buttons {
+    display: flex;
+    align-items: center;
+}
+.navigation-buttons .btn {
+    margin-right: 20px;
+}
 #salario-atual, #horas-dia-atual, #dias-semana-atual, #salario-almejado, #horas-dia-almejado, #dias-semana-almejado, #valor-hora-almejada-editavel, #custo-material, #mtkplace {
     background-color: #eaeaea;
     color: #000;
