@@ -109,4 +109,19 @@ $('#home-btn').click(function() {
     currentCardIndex = 0;
     mostrarCard('vida-atual'); // Assume que 'vida-atual' é o primeiro card
 });
+
+
+    $(document).ready(function() {
+        $('a[href="#valor-produto"]').click(function(e) {
+            e.preventDefault(); // Evita a rolagem automática da página
+            mostrarCard('valor-produto'); // Chama a função que mostra o card correto
+            currentCardIndex = 4; // Atualiza o índice do card atual, se necessário
+        });
+
+        $('a[href="#vida-atual"]').click(function(e) {
+            e.preventDefault();
+            mostrarCard('vida-atual');
+            currentCardIndex = 0;
+        });
+    });
 });
