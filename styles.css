@@ -159,6 +159,14 @@ p {
     width: 40px; 
     height: 40px;
 }
+.btn-front {
+    position: relative;
+    background: url('img/front.png') no-repeat;
+    background-size: contain;
+    border: none;
+    width: 40px; 
+    height: 40px;
+}
 .btn-back:hover, .btn-home:hover {
     background-color: transparent !important; /* Remover fundo cinza */
 }
