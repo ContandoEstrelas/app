@@ -13,6 +13,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: white;
     color: black;
+    overflow-x: hidden;
 }
 .container {
     max-width: 960px;
@@ -20,6 +21,9 @@ body {
 .container img {
     display: block;
     margin: 0 auto; /* centraliza a imagem */
+}
+img, .container, .navbar {
+    max-width: 100%;
 }
 h1 {
     text-align: center;
