@@ -16,13 +16,13 @@ body {
     overflow-x: hidden;
 }
 .container {
-    max-width: 960px;
+    max-width: 100%;
 }
 .container img {
     display: block;
     margin: 0 auto; /* centraliza a imagem */
 }
-img, .container, .navbar {
+img, body, .container, .navbar {
     max-width: 100%;
 }
 h1 {
