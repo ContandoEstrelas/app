@@ -47,149 +47,19 @@
         <div class="row">
             <div class="col-sm-12 col-md-12">
                 <div class="card" id="vida-atual">
-                    <div class="card-body">
-                        <p><strong>Você acha que ganha o que merece?</strong></p>
-                        <p>Descubra o quanto vale a sua hora hoje e quanto ela deve valer para você se tornar uma profissional valorizada.</p>
-                        <br>
-                        <h2 class="card-title vida-atual">VIDA ATUAL</h2>
-                        <br>
-                        <form>
-                        <div class="form-group">
-                            <input type="text" id="salario-atual" class="form-control" placeholder="Quanto você ganha por mês?">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="horas-dia-atual" class="form-control" placeholder="Horas trabalhadas por dia">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="dias-semana-atual" class="form-control" placeholder="Dias trabalhados por semana">
-                        </div>
-                        <br>
-                        <button type="button" id="calcular-vida-atual" class="btn btn-primary">calcular</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12">
-                <div class="card" id="valor-atual-hora">
-                    <div class="card-body">
-                        <h2 class="hora-vale">SUA HORA VALE</h2> 
-                        <br>
-                        <strong></strong><h3 id="valor-hora-atual">0,00</h3></strong>
-                    </div>
-                    <div>
-                        <p id="quer-saber">Quer saber quanto sua hora deve valer para alcançar a vida que deseja? </p>
-                    </div>
-                    <br>
-                    <button id="prosseguir" class="btn btn-secondary">sim</button>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12">
-                <div class="card" id="vida-almejada">
-                    <div class="card-body">
-                        <h2 class="card-title vida-desejada">VIDA QUE DESEJA</h2>
-                        <br>
-                        <form>
-                            <div class="form-group">
-                                <input type="text" id="salario-almejado" class="form-control" placeholder="Quanto você quer ganhar?">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="horas-dia-almejado" class="form-control" placeholder="Horas trabalhadas por dia">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="dias-semana-almejado" class="form-control" placeholder="Dias trabalhados por semana">
-                            </div>
-                            <br>
-                            <button type="button" id="calcular-vida-almejada" class="btn btn-secondary">calcular</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12">
-                <div class="card" id="valor-desejada-hora">
-                    <div class="card-body">
-                        <h2 class="card-title valor-desejada-hora">SUA HORA VAI VALER </h2>
-                        <br>
-                        <h3 id="valor-hora-almejado">0,00</h3>
-                    </div>
-
-                    <br><br>
-                    <button id="prosseguir-calculo" class="btn btn-primary">CALCULE QUANTO COBRAR <br> NO SEU PRODUTO</button>
-                    <br><br><br>
-                    <div>
-                        <a href="http://www.contandoestrelas.com/bladekit">
-                            <img class="banner" src="img/banner-1.jpg" alt="banner">
-                        </a>
-                    </div>
-                </div>
-            </div>   
-            <div class="col-sm-12 col-md-12">
-                <div class="card" id="valor-produto">
-                    <div class="card-body">
-                        <div>
-                            <p>Calcule quanto cobrar nos seus produtos com base na sua hora.</p>
-                        </div>
-                        <h2 class="card-title quanto-cobrar">QUANTO COBRAR?</h2>
-                        <br>
-                        <form>
-                            <div class="form-group row">
-                                <label class="col-sm-8 col-form-label"><strong>Valor da hora almejada:</strong></label>
-                                <div class="col-sm-4">
-                                    <input type="text" id="valor-hora-almejada-editavel" class="form-control" placeholder="R$0,00">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-8 col-form-label"><strong>Custo do material:</strong></label>
-                                <div class="col-sm-4">
-                                    <input type="text" id="custo-material" class="form-control" placeholder="R$0,00">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-12 col-form-label"><strong>Tempo de produção:</strong></label>
-                                <div class="col-sm-12">
-                                    <input type="range" id="tempo-producao" class="form-control-range" min="0" max="180" value="30">
-                                    <p id="tempo-producao-display">30 minutos</p>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-6 col-form-label"><strong>Tipo de venda:</strong></label>
-                                <div class="col-sm-6" id="taxa-marketplace">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="marketplaceTax" id="marketplace" value="0.18">
-                                        <label class="form-check-label" for="marketplace">
-                                            Marketplace
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="marketplaceTax" id="directSale" value="0">
-                                        <label class="form-check-label" for="directSale">
-                                            Venda Direta
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <button type="button" id="calcular" class="btn btn-primary">calcular</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12">
-                <div class="card" id="calculo-produto">
-                    <div class="card-body">
-                        <h2 class="preco-minimo">PREÇO MÍNIMO DE VENDA:</h2>
-                        <br>
-                        <h3 id="valor-produto-final">0,00</h3>       
-                    </div>
-                    <br><br><br>
-                    <div>
-                        <a href="http://www.contandoestrelas.com/bladekit">
-                            <img class="banner" src="img/banner-2.jpg" alt="banner">
-                        </a>
-                    </div>
+                      <form klicksend-form-id='3quvGJ5' method="post" action="//handler.klicksend.com.br/subscription/3quvGJ5">
+                          <input type="email" name="email" id="email" placeholder="Email" value="" required>
+                    <div klicksend-gdpr-text style="font-size: 10px; color: #86919a; margin-bottom: 5px; text-align: left;"><p> Esses dados serão utilizados para entrarmos em contato com você e disponibilizarmos mais conteúdos e ofertas. Caso você não queira mais receber os nosso emails, cada email que você receber, incluirá ao final, um link que poderá ser usado para remover o seu email da nossa lista de distribuição. </p><p> Para mais informações, acesse:<a href="https://klickpages.com.br/politica-de-privacidade/" target="_blank" rel="noopener">https://klickpages.com.br/politica-de-privacidade/</a> </p> </div>  <input type="checkbox" name="gdpr" id="gdpr" placeholder="Concordo em receber os e-mails" value="Concordo em receber os e-mails" required> <label for="gdpr"> Concordo em receber os e-mails </label>
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="b_3quvGJ5" tabindex="-1" value="">
+                      </div>
+                        <button >Enviar</button>
+                      </form>
                 </div>
             </div>
         </div>
     </div>
+
 </main>
 
         
