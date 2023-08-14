@@ -193,18 +193,18 @@
 </main>
 
         
-    <footer>
-        <div class="navigation-buttons">
-            <button class="btn btn-back" id="voltar"></button>
-            <button class="btn btn-home" id="home-btn"></button>
-            <button class="btn btn-front" id="prosseguir"></button>
-        </div>
-        <div class="social-buttons">
-            <a href="https://www.instagram.com/con.tan.do.estrelas" target="_blank"><img src="img/instagram.png"></a>
-            <a href="https://www.youtube.com/@ContandoEstrelas" target="_blank"><img src="img/youtube.png"></a>
-            <a href="https://wa.me/5541999455806" target="_blank"><img src="img/whatsapp.png"></a>
-        </div>
-    </footer>
+<footer>
+    <div class="navigation-buttons">
+        <button class="btn btn-back" id="voltar">Voltar</button>
+        <button class="btn btn-home" id="home-btn">Home</button> 
+        <button class="btn btn-front" id="prosseguir">Prosseguir</button>
+    </div>
+    <div class="social-buttons">
+        <a href="https://www.instagram.com/con.tan.do.estrelas" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+        <a href="https://www.youtube.com/@ContandoEstrelas" target="_blank"><img src="img/youtube.png" alt="YouTube"></a>
+        <a href="https://wa.me/5541999455806" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+    </div>
+</footer>
 
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
